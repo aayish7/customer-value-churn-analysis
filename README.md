@@ -16,9 +16,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
 
-# ------------------------------------------------------------
 # 1. LOAD DATA
-# ------------------------------------------------------------
 
 FILE_PATH = "ecommerce_data.csv"
 
@@ -32,9 +30,7 @@ print("\nFirst 5 rows:")
 print(df.head())
 
 
-# ------------------------------------------------------------
 # 2. DATA CLEANING
-# ------------------------------------------------------------
 
 # Remove duplicate records
 df = df.drop_duplicates()
@@ -60,9 +56,9 @@ df["Revenue"] = df["Quantity"] * df["UnitPrice"]
 print("\nCleaned dataset shape:", df.shape)
 
 
-# ------------------------------------------------------------
+
 # 3. BASIC BUSINESS ANALYTICS
-# ------------------------------------------------------------
+
 
 total_revenue = df["Revenue"].sum()
 total_customers = df["CustomerID"].nunique()
@@ -75,9 +71,8 @@ print(f"Orders        : {total_orders:,}")
 print(f"Average Order : ${total_revenue / total_orders:,.2f}")
 
 
-# ------------------------------------------------------------
 # 4. CREATE RFM DATASET
-# ------------------------------------------------------------
+
 
 # Analysis date = one day after the last transaction
 analysis_date = df["InvoiceDate"].max() + pd.Timedelta(days=1)
@@ -106,9 +101,7 @@ print("\n========== RFM DATA ==========")
 print(rfm.head())
 
 
-# ------------------------------------------------------------
 # 5. RFM SCORE CALCULATION
-# ------------------------------------------------------------
 
 # Recency:
 # Lower is better, therefore reverse scoring.
@@ -155,9 +148,8 @@ print("\n========== RFM SCORES ==========")
 print(rfm.head())
 
 
-# ------------------------------------------------------------
+
 # 6. CUSTOMER SEGMENTATION
-# ------------------------------------------------------------
 
 def assign_segment(row):
 
@@ -207,9 +199,7 @@ print("\n========== CUSTOMER SEGMENTS ==========")
 print(rfm["Segment"].value_counts())
 
 
-# ------------------------------------------------------------
 # 7. CHURN RISK ANALYSIS
-# ------------------------------------------------------------
 
 # Churn definition:
 # Customers who have not purchased for 90+ days
@@ -234,9 +224,8 @@ print("\n========== CHURN RISK ==========")
 print(rfm["Churn_Risk"].value_counts())
 
 
-# ------------------------------------------------------------
 # 8. CHURN PROBABILITY SCORE
-# ------------------------------------------------------------
+
 
 # Create a simple business-oriented churn probability.
 
@@ -267,9 +256,7 @@ print(
 )
 
 
-# ------------------------------------------------------------
 # 9. MARKETING RECOMMENDATIONS
-# ------------------------------------------------------------
 
 marketing_actions = {
 
@@ -307,9 +294,8 @@ rfm["Marketing_Recommendation"] = (
 )
 
 
-# ------------------------------------------------------------
 # 10. CUSTOMER ANALYTICS REPORT
-# ------------------------------------------------------------
+
 
 segment_report = rfm.groupby("Segment").agg(
 
@@ -345,9 +331,7 @@ print("\n========== SEGMENT REPORT ==========")
 print(segment_report)
 
 
-# ------------------------------------------------------------
 # 11. VISUALIZATION - CUSTOMER SEGMENTS
-# ------------------------------------------------------------
 
 plt.figure(figsize=(12, 6))
 
@@ -366,9 +350,8 @@ plt.tight_layout()
 plt.show()
 
 
-# ------------------------------------------------------------
 # 12. VISUALIZATION - CHURN RISK
-# ------------------------------------------------------------
+
 
 plt.figure(figsize=(8, 6))
 
@@ -388,9 +371,7 @@ plt.tight_layout()
 plt.show()
 
 
-# ------------------------------------------------------------
 # 13. VISUALIZATION - REVENUE BY SEGMENT
-# ------------------------------------------------------------
 
 plt.figure(figsize=(12, 6))
 
@@ -413,9 +394,7 @@ plt.tight_layout()
 plt.show()
 
 
-# ------------------------------------------------------------
 # 14. RFM HEATMAP
-# ------------------------------------------------------------
 
 rfm_heatmap = rfm.groupby("Segment")[
     ["Recency", "Frequency", "Monetary"]
@@ -460,9 +439,8 @@ print(
 )
 
 
-# ------------------------------------------------------------
 # 16. HIGH-VALUE CUSTOMERS AT RISK
-# ------------------------------------------------------------
+
 
 high_value_risk = rfm[
     (rfm["Monetary"] >= rfm["Monetary"].quantile(0.75))
@@ -492,9 +470,8 @@ print(
 )
 
 
-# ------------------------------------------------------------
 # 17. OPTIONAL MACHINE LEARNING CHURN MODEL
-# ------------------------------------------------------------
+
 
 # Create binary churn target
 # 1 = churn risk
