@@ -1,9 +1,9 @@
 # ecommerce-sales-customer-analytics-
 RFM-based customer segmentation and churn risk analysis for an e-commerce business, with data-driven marketing recommendations per segment.
-# ============================================================
+
 # E-COMMERCE CUSTOMER ANALYTICS
 # RFM CUSTOMER SEGMENTATION + CHURN RISK ANALYSIS
-# ============================================================
+
 
 import pandas as pd
 import numpy as np
