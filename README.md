@@ -415,9 +415,8 @@ plt.tight_layout()
 plt.show()
 
 
-# ------------------------------------------------------------
 # 15. TOP CUSTOMERS
-# ------------------------------------------------------------
+
 
 top_customers = rfm.sort_values(
     "Monetary",
@@ -548,9 +547,8 @@ print(
 )
 
 
-# ------------------------------------------------------------
 # 18. FEATURE IMPORTANCE
-# ------------------------------------------------------------
+
 
 importance = pd.DataFrame({
 
@@ -583,10 +581,8 @@ plt.title("Factors Influencing Churn")
 plt.tight_layout()
 plt.show()
 
-
-# ------------------------------------------------------------
 # 19. SAVE CUSTOMER ANALYTICS
-# ------------------------------------------------------------
+
 
 rfm.to_csv(
     "customer_rfm_segmentation.csv"
@@ -607,13 +603,10 @@ print("2. customer_segment_report.csv")
 print("3. high_value_customers_at_risk.csv")
 
 
-# ------------------------------------------------------------
-# 20. FINAL BUSINESS SUMMARY
-# ------------------------------------------------------------
 
-print("\n==========================================")
+# 20. FINAL BUSINESS SUMMARY
+
 print("          FINAL BUSINESS SUMMARY")
-print("==========================================")
 
 print(
     f"Total Customers: {len(rfm):,}"
