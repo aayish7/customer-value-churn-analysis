@@ -102,7 +102,6 @@ Tools & Technologies
 - Python
 - Pandas
 - NumPy
-- Matplotlib
 - Jupyter Notebook
 - Microsoft Excel
 
