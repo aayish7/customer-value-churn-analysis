@@ -67,3 +67,17 @@ Sales value is calculated using:
 
 ```text
 Sales = Quantity × UnitPrice
+---
+## Exploratory Data Analysis
+
+The project analyzes key business metrics such as:
+
+Total revenue
+Number of orders
+Number of customers
+Number of products
+Average Order Value (AOV)
+Monthly revenue trends
+Country-wise revenue
+Product performance
+Customer purchasing behavior
