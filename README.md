@@ -619,9 +619,7 @@ print("3. high_value_customers_at_risk.csv")
 # 20. FINAL BUSINESS SUMMARY
 
 
-print("\n==========================================")
 print("          FINAL BUSINESS SUMMARY")
-print("==========================================")
 
 print(
     f"Total Customers: {len(rfm):,}"
