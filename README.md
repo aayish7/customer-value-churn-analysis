@@ -97,7 +97,7 @@ The analysis provides actionable insights that can support data-driven business 
 These insights enable the business to move from **descriptive sales analysis to actionable customer-focused decision-making**.
 Tools & Technologies
 
-##The project was developed using:
+## The project was developed using:
 
 - Python
 - Pandas
