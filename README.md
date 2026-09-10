@@ -71,8 +71,8 @@ print(f"Orders        : {total_orders:,}")
 print(f"Average Order : ${total_revenue / total_orders:,.2f}")
 
 
-# 4. CREATE RFM DATASET
 
+# 4. CREATE RFM DATASET
 
 # Analysis date = one day after the last transaction
 analysis_date = df["InvoiceDate"].max() + pd.Timedelta(days=1)
@@ -101,7 +101,9 @@ print("\n========== RFM DATA ==========")
 print(rfm.head())
 
 
+
 # 5. RFM SCORE CALCULATION
+
 
 # Recency:
 # Lower is better, therefore reverse scoring.
@@ -150,6 +152,7 @@ print(rfm.head())
 
 
 # 6. CUSTOMER SEGMENTATION
+
 
 def assign_segment(row):
 
@@ -201,6 +204,7 @@ print(rfm["Segment"].value_counts())
 
 # 7. CHURN RISK ANALYSIS
 
+
 # Churn definition:
 # Customers who have not purchased for 90+ days
 # are considered at risk of churn.
@@ -222,6 +226,7 @@ rfm["Churn_Risk"] = rfm["Recency"].apply(churn_risk)
 
 print("\n========== CHURN RISK ==========")
 print(rfm["Churn_Risk"].value_counts())
+
 
 
 # 8. CHURN PROBABILITY SCORE
@@ -256,7 +261,9 @@ print(
 )
 
 
+
 # 9. MARKETING RECOMMENDATIONS
+
 
 marketing_actions = {
 
@@ -292,6 +299,7 @@ marketing_actions = {
 rfm["Marketing_Recommendation"] = (
     rfm["Segment"].map(marketing_actions)
 )
+
 
 
 # 10. CUSTOMER ANALYTICS REPORT
@@ -331,7 +339,9 @@ print("\n========== SEGMENT REPORT ==========")
 print(segment_report)
 
 
+
 # 11. VISUALIZATION - CUSTOMER SEGMENTS
+
 
 plt.figure(figsize=(12, 6))
 
@@ -348,6 +358,7 @@ plt.ylabel("Customer Segment")
 
 plt.tight_layout()
 plt.show()
+
 
 
 # 12. VISUALIZATION - CHURN RISK
@@ -371,7 +382,9 @@ plt.tight_layout()
 plt.show()
 
 
+
 # 13. VISUALIZATION - REVENUE BY SEGMENT
+
 
 plt.figure(figsize=(12, 6))
 
@@ -392,6 +405,7 @@ plt.ylabel("Customer Segment")
 
 plt.tight_layout()
 plt.show()
+
 
 
 # 14. RFM HEATMAP
@@ -415,8 +429,8 @@ plt.tight_layout()
 plt.show()
 
 
-# 15. TOP CUSTOMERS
 
+# 15. TOP CUSTOMERS
 
 top_customers = rfm.sort_values(
     "Monetary",
@@ -436,7 +450,6 @@ print(
         ]
     ]
 )
-
 
 # 16. HIGH-VALUE CUSTOMERS AT RISK
 
@@ -469,8 +482,8 @@ print(
 )
 
 
-# 17. OPTIONAL MACHINE LEARNING CHURN MODEL
 
+# 17. OPTIONAL MACHINE LEARNING CHURN MODEL
 
 # Create binary churn target
 # 1 = churn risk
@@ -549,7 +562,6 @@ print(
 
 # 18. FEATURE IMPORTANCE
 
-
 importance = pd.DataFrame({
 
     "Feature": features,
@@ -581,6 +593,7 @@ plt.title("Factors Influencing Churn")
 plt.tight_layout()
 plt.show()
 
+
 # 19. SAVE CUSTOMER ANALYTICS
 
 
@@ -603,8 +616,8 @@ print("2. customer_segment_report.csv")
 print("3. high_value_customers_at_risk.csv")
 
 
-
 # 20. FINAL BUSINESS SUMMARY
+
 
 print("          FINAL BUSINESS SUMMARY")
 
