@@ -63,21 +63,72 @@ The dataset is first examined for data quality issues, including:
 
 For customer-level analysis, cancelled and invalid sales transactions are excluded.
 
-Sales value is calculated using:
 
-```text
-Sales = Quantity × UnitPrice
----
 ## Exploratory Data Analysis
 
-The project analyzes key business metrics such as:
+The Exploratory Data Analysis (EDA) phase focuses on understanding overall sales performance, customer behavior, product performance, and purchasing patterns within the e-commerce dataset.
 
-Total revenue
-Number of orders
-Number of customers
-Number of products
-Average Order Value (AOV)
-Monthly revenue trends
-Country-wise revenue
-Product performance
-Customer purchasing behavior
+The analysis covers the following key business metrics:
+
+- **Number of Orders** – Determines the total number of unique orders.
+- **Number of Customers** – Identifies the number of unique customers.
+- **Number of Products** – Measures the number of unique products available in the dataset.
+- **Average Order Value (AOV)** – Calculates the average revenue generated per order.
+- **Monthly Revenue Trends** – Analyzes revenue performance across different months to identify growth patterns and seasonal trends.
+- **Country-wise Revenue** – Compares sales performance across different countries.
+- **Product Performance** – Identifies top-performing products based on sales and purchasing activity.
+- **Customer Purchasing Behavior** – Examines customer order frequency, spending patterns, and overall purchasing activity.
+
+These analyses provide the foundation for the subsequent **RFM-based customer segmentation and churn risk analysis**.
+
+## Key Business Insights
+
+The analysis provides actionable insights that can support data-driven business and marketing decisions. Key outcomes include:
+
+- **Identify High-Value Customers** – Recognize customers who contribute significantly to overall revenue.
+- **Understand Customer Purchasing Behavior** – Analyze customer purchase frequency, spending patterns, and engagement levels.
+- **Improve Customer Retention** – Develop targeted strategies to retain valuable and loyal customers.
+- **Detect Potential Churn** – Identify inactive or at-risk customers before they are completely lost.
+- **Prioritize High-Value At-Risk Customers** – Focus retention efforts on customers who have both high customer value and elevated churn risk.
+- **Personalize Marketing Strategies** – Create segment-specific campaigns based on customer behavior and RFM characteristics.
+- **Increase Repeat Purchases** – Encourage customers to purchase more frequently through targeted offers and loyalty initiatives.
+- **Optimize Marketing Resource Allocation** – Direct marketing efforts and budgets toward customer segments with the highest potential business impact.
+
+These insights enable the business to move from **descriptive sales analysis to actionable customer-focused decision-making**.
+
+## Project Flowchart
+
+Data Collection
+      ↓
+Data Cleaning
+      ↓
+Exploratory Data Analysis
+      ↓
+Sales & Customer Analysis
+      ↓
+RFM Calculation
+      ↓
+RFM Scoring
+      ↓
+Customer Segmentation
+      ↓
+Churn Risk Analysis
+      ↓
+Marketing Recommendations
+
+## Conclusion
+
+The quantity analysis provides valuable insights into the purchasing behavior and transaction patterns of the e-commerce business. The dataset contains both positive and negative quantities, indicating regular sales as well as returned or cancelled transactions.
+
+The analysis shows that most transactions involve positive quantities, while negative quantity records represent a smaller portion of the overall transactions. However, the presence of extreme quantity values indicates that some transactions may require further investigation for potential bulk purchases, returns, or data anomalies.
+
+Overall, quantity-based analysis helps the business:
+
+- Understand product purchasing volumes.
+- Identify high-volume transactions.
+- Monitor returned or cancelled quantities.
+- Detect unusual or extreme transaction quantities.
+- Evaluate customer purchasing patterns.
+- Support inventory and stock management decisions.
+
+By combining quantity analysis with sales, customer, and RFM analysis, the business can gain a more comprehensive understanding of purchasing behavior and make better data-driven decisions.
