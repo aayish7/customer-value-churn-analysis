@@ -95,26 +95,16 @@ The analysis provides actionable insights that can support data-driven business 
 - **Optimize Marketing Resource Allocation** – Direct marketing efforts and budgets toward customer segments with the highest potential business impact.
 
 These insights enable the business to move from **descriptive sales analysis to actionable customer-focused decision-making**.
+Tools & Technologies
 
-## Project Flowchart
+##The project was developed using:
 
-Data Collection
-      ↓
-Data Cleaning
-      ↓
-Exploratory Data Analysis
-      ↓
-Sales & Customer Analysis
-      ↓
-RFM Calculation
-      ↓
-RFM Scoring
-      ↓
-Customer Segmentation
-      ↓
-Churn Risk Analysis
-      ↓
-Marketing Recommendations
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Jupyter Notebook
+- Microsoft Excel
 
 ## Conclusion
 
